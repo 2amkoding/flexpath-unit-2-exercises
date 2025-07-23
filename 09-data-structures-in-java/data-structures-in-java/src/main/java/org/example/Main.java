@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * This class contains several methods that operate on collections.
@@ -13,7 +14,16 @@ public class Main {
      */
     public static List<String> getStudentNamesList() {
         // TODO: return a list of student names (John, Jane, Alice, Bob)
-        return new ArrayList<>();
+
+        List<String> students = new ArrayList<>();
+        students.add("John");
+        students.add("Jane");
+        students.add("Alice");
+        students.add("Bob");
+
+        return students;
+
+        //figure out how to use stream
     }
 
     /**
@@ -23,6 +33,11 @@ public class Main {
      */
     public static List<String> getMStudents(List<String> students) {
         List<String> mStudents = new ArrayList<>();
+
+        mStudents =  students.stream()
+                 .filter(names -> names.contains("M"))
+                .toList();
+
 
         // TODO: Populate mStudents from students, copying over only students whose names start with "M"
 
