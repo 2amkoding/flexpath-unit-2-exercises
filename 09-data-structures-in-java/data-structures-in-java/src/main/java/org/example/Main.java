@@ -55,6 +55,22 @@ public class Main {
 
         // TODO: Poll the queue three times and add the items to firstThree
 
+        firstThree = queue.stream()
+                .limit(3)
+                .collect(Collectors.toList());
+
+        // The Classic way using 'Poll'
+//        for(int i = 0; i < 3 && !queue.isEmpty(); i++) {
+//            String topOfStack = queue.poll();
+//
+//            if (topOfStack != null){
+//                firstThree.add(topOfStack);
+//            }
+//        }
+
+
+
+
         return firstThree;
     }
 
