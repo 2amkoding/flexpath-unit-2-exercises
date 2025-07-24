@@ -80,11 +80,12 @@ public class Main {
      * @return a set of student names
      */
     public static HashSet<String> makeSetFromList(List<String> students) {
-        var set = new HashSet<String>();
 
         // TODO: Put all students into the set
 
-        return set;
+
+
+        return new HashSet<String>(students);
     }
 
     /**
@@ -97,8 +98,34 @@ public class Main {
     public static boolean checkIfHashSetContainsAny(Set<String> haystack, List<String> needles) {
         // TODO: Loop through all needles and return true if any of them are in the haystack
 
+        // Loop thru an Array of needles,
+        //If set includes Array
+        //return true
+
+       //Classic ways
+
+//        AtomicBoolean found = new AtomicBoolean(false);
+//        needles.forEach(needle ->
+//        {
+//            if(haystack.contains(needle)){
+//                found.set(true);
+//            }
+//        });
+
+       // Classic way
+//        for (String needle : needles) {
+//            if(haystack.contains(needle)) {
+//                return true;
+//            }
+//        }
+
         // Return false if none of the needles are in the haystack
-        return false;
+        //return false
+
+        // return found.get();
+
+        //stream
+        return needles.stream().anyMatch(haystack::contains);
     }
 
     /**
